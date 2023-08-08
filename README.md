@@ -1,13 +1,31 @@
+以下のチュートリアルを参照
+https://learn.microsoft.com/ja-jp/azure/app-service/deploy-container-github-action?tabs=publish-profile
+
+# 環境変数
+APP_SERVICE_APP_NAME: AppServiceの名前
+
+AZURE_WEBAPP_PUBLISH_PROFILE: App Service側で概要から発行プロファイルを作成
+https://learn.microsoft.com/ja-jp/visualstudio/azure/how-to-get-publish-profile-from-azure-app-service?view=vs-2022
+
+REGISTRY_NAME: コンテナレジストリ名
+
+REGISTRY_PASSWORD: コンテナーレジストリのアクセスキーで確認
+
+REGISTRY_USERNAME: コンテナーレジストリのアクセスキーで確認
+
+
+
+
 # Django starter app for Web App on Linux
 
-A simple Python Django application running in a Docker container. The custom image uses port 8000. 
+A simple Python Django application running in a Docker container. The custom image uses port 8000.
 
-## Setting up custom image for web App on Linux 
+## Setting up custom image for web App on Linux
 - Create a Web App on Linux using CLI or Azure portal
-- Configure your web app to custom image 
-- Add an App Setting ```WEBSITES_PORT = 8000 ``` for your app 
-- Browse your site 
- 
+- Configure your web app to custom image
+- Add an App Setting ```WEBSITES_PORT = 8000 ``` for your app
+- Browse your site
+
 # Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
