@@ -7,15 +7,14 @@ ADD requirements.txt /code/
 RUN pip install -r requirements.txt --no-cache-dir
 ADD . /code/
 
-# ssh
-ENV SSH_PASSWD "root:Docker!"
+# Start and enable SSH
 RUN apt-get update \
   && apt-get install -y --no-install-recommends dialog \
-  && apt-get update \
   && apt-get install -y --no-install-recommends openssh-server \
-  && echo "$SSH_PASSWD" | chpasswd
-
+  && echo "root:Docker!" | chpasswd \
+  && chmod u+x ./entrypoint.sh
 COPY sshd_config /etc/ssh/
+
 COPY startup.sh /app/
 
 RUN chmod u+x /app/startup.sh
