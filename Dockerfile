@@ -12,8 +12,7 @@ RUN apt-get update \
   && apt-get install -y --no-install-recommends dialog \
   && apt-get install -y --no-install-recommends openssh-server \
   && echo "root:Docker!" | chpasswd \
-  && chmod u+x ./entrypoint.sh
-COPY sshd_config /etc/ssh/
+  COPY sshd_config /etc/ssh/
 
 COPY startup.sh /app/
 
