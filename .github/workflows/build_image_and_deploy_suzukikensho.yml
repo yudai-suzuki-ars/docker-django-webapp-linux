@@ -30,7 +30,7 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.ACR_REGISTRY_NAME }}.azurecr.io/${{ secrets.ACR_REGISTRY_NAME }}/${{ vars.PROJECT}}:${{ github.sha }}
-          file: Dockerfile
+          file: Dockerfil
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
